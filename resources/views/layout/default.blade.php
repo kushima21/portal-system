@@ -42,53 +42,64 @@
             </div>
 
             <!-- SCROLL AREA -->
-            <div class="flex-1 overflow-y-auto mt-5 px-4">
+<div class="flex-1 overflow-y-auto mt-5 px-4">
 
-                <h2 class="text-sm text-gray-400 mb-3">MANAGE</h2>
+    <h2 class="text-sm text-gray-400 mb-3">MANAGE</h2>
 
-                <div class="flex flex-col gap-3">
-                    <div class="w-full rounded-lg hover:bg-gray-700 flex items-center justify-center py-2 cursor-pointer">
-                        <h2 class="text-sm text-gray-200">Classes</h2>
-                    </div>
-                    <div class="w-full rounded-lg hover:bg-gray-700 flex items-center justify-center py-2 cursor-pointer">
-                        <h2 class="text-sm text-gray-200">Classroom</h2>
-                    </div>
-                    <div class="w-full rounded-lg hover:bg-gray-700 flex items-center justify-center py-2 cursor-pointer">
-                        <h2 class="text-sm text-gray-200">Class Schedule</h2>
-                    </div>
-                    <div class="w-full rounded-lg hover:bg-gray-700 flex items-center justify-center py-2 cursor-pointer">
-                        <h2 class="text-sm text-gray-200">Enrollment</h2>
-                    </div>
-                    <div class="w-full rounded-lg hover:bg-gray-700 flex items-center justify-center py-2 cursor-pointer">
-                        <h2 class="text-sm text-gray-200">Program</h2>
-                    </div>
-                    <div class="w-full rounded-lg hover:bg-gray-700 flex items-center justify-center py-2 cursor-pointer">
-                        <h2 class="text-sm text-gray-200">Curricula</h2>
-                    </div>
-                    <div class="w-full rounded-lg hover:bg-gray-700 flex items-center justify-center py-2 cursor-pointer">
-                        <h2 class="text-sm text-gray-200">Subjects</h2>
-                    </div>
-                    <div class="w-full rounded-lg hover:bg-gray-700 flex items-center justify-center py-2 cursor-pointer">
-                        <h2 class="text-sm text-gray-200">Enrollment Archived</h2>
-                    </div>
-                </div>
+    <div class="flex flex-col gap-3">
+        <div class="w-full rounded-lg hover:bg-gray-700 flex items-center gap-3 py-2 px-3 cursor-pointer">
+            <i class="fa-solid fa-chalkboard text-gray-200 w-5"></i>
+            <h2 class="text-sm text-gray-200">Classes</h2>
+        </div>
+        <div class="w-full rounded-lg hover:bg-gray-700 flex items-center gap-3 py-2 px-3 cursor-pointer">
+            <i class="fa-solid fa-school text-gray-200 w-5"></i>
+            <h2 class="text-sm text-gray-200">Classroom</h2>
+        </div>
+        <div class="w-full rounded-lg hover:bg-gray-700 flex items-center gap-3 py-2 px-3 cursor-pointer">
+            <i class="fa-solid fa-calendar-days text-gray-200 w-5"></i>
+            <h2 class="text-sm text-gray-200">Class Schedule</h2>
+        </div>
+        <div class="w-full rounded-lg hover:bg-gray-700 flex items-center gap-3 py-2 px-3 cursor-pointer">
+            <i class="fa-solid fa-user-plus text-gray-200 w-5"></i>
+            <h2 class="text-sm text-gray-200">Enrollment</h2>
+        </div>
+        <div class="w-full rounded-lg hover:bg-gray-700 flex items-center gap-3 py-2 px-3 cursor-pointer">
+            <i class="fa-solid fa-book-open text-gray-200 w-5"></i>
+            <h2 class="text-sm text-gray-200">Program</h2>
+        </div>
+        <div class="w-full rounded-lg hover:bg-gray-700 flex items-center gap-3 py-2 px-3 cursor-pointer">
+            <i class="fa-solid fa-book text-gray-200 w-5"></i>
+            <h2 class="text-sm text-gray-200">Curricula</h2>
+        </div>
+        <div class="w-full rounded-lg hover:bg-gray-700 flex items-center gap-3 py-2 px-3 cursor-pointer">
+            <i class="fa-solid fa-bookmark text-gray-200 w-5"></i>
+            <h2 class="text-sm text-gray-200">Subjects</h2>
+        </div>
+        <div class="w-full rounded-lg hover:bg-gray-700 flex items-center gap-3 py-2 px-3 cursor-pointer">
+            <i class="fa-solid fa-archive text-gray-200 w-5"></i>
+            <h2 class="text-sm text-gray-200">Enrollment Archived</h2>
+        </div>
+    </div>
 
-                <!-- ACCOUNT SECTION -->
-                <h2 class="text-sm text-gray-400 mt-6 mb-3">ACCOUNT</h2>
+    <!-- ACCOUNT SECTION -->
+    <h2 class="text-sm text-gray-400 mt-6 mb-3">ACCOUNT</h2>
 
-                <div class="flex flex-col gap-3">
-                    <div class="w-full rounded-lg hover:bg-gray-700 flex items-center justify-center py-2 cursor-pointer">
-                        <h2 class="text-sm text-gray-200">Users</h2>
-                    </div>
-                    <div class="w-full rounded-lg hover:bg-gray-700 flex items-center justify-center py-2 cursor-pointer">
-                        <h2 class="text-sm text-gray-200">Personnels</h2>
-                    </div>
-                    <div class="w-full rounded-lg hover:bg-gray-700 flex items-center justify-center py-2 cursor-pointer">
-                        <h2 class="text-sm text-gray-200">Students</h2>
-                    </div>
-                </div>
+    <div class="flex flex-col gap-3">
+        <div class="w-full rounded-lg hover:bg-gray-700 flex items-center gap-3 py-2 px-3 cursor-pointer">
+            <i class="fa-solid fa-users text-gray-200 w-5"></i>
+            <h2 class="text-sm text-gray-200">Users</h2>
+        </div>
+        <div class="w-full rounded-lg hover:bg-gray-700 flex items-center gap-3 py-2 px-3 cursor-pointer">
+            <i class="fa-solid fa-user-tie text-gray-200 w-5"></i>
+            <h2 class="text-sm text-gray-200">Personnels</h2>
+        </div>
+        <div class="w-full rounded-lg hover:bg-gray-700 flex items-center gap-3 py-2 px-3 cursor-pointer">
+            <i class="fa-solid fa-user-graduate text-gray-200 w-5"></i>
+            <h2 class="text-sm text-gray-200">Students</h2>
+        </div>
+    </div>
 
-            </div>
+</div>
         </div>
 
         <!-- MAIN CONTENT -->
