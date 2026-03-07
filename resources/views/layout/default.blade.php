@@ -28,7 +28,7 @@
             <div class="rounded-lg flex w-max h-max pt-1 pb-1 items-center justify-center gap-6 mt-5 px-4 mx-auto hover:bg-gray-700 cursor-pointer">
                 <i class="fa-solid fa-user text-2xl text-gray-200"></i>
                 <div>
-                    <h2 class="text-sm text-gray-200">John Mark Hondrada</h2>
+                    <h2 class="text-sm text-gray-200">John Mark</h2>
                     <h2 class="text-sm text-gray-400">ID:02231</h2>
                 </div>
                 <i class="fa-solid fa-sort text-sm text-gray-400"></i>
