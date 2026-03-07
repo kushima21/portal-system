@@ -28,7 +28,7 @@
         </div>
 
         <!-- TABLE WRAPPER -->
-        <div class="w-full mx-auto mt-5">
+        <div class="w-full mx-auto overflow-y-auto-scroll mt-5">
             <table class="w-full">
                 <thead>
                     <tr class="h-[50px]">
@@ -70,6 +70,68 @@
                         </td>
                     </tr>
 
+                    <tr class="h-[50px] border-b border-gray-200">
+                        <td class="pl-5"><input type="checkbox"></td>
+                        <td class="px-5">PHYS101</td>
+                        <td class="px-5">General Physics</td>
+                        <td class="px-5">
+                            <button class="px-3 py-1 bg-blue-500 text-white rounded-lg">Edit</button>
+                            <button class="px-3 py-1 bg-red-500 text-white rounded-lg">Delete</button>
+                        </td>
+                    </tr>
+
+                    <tr class="h-[50px] border-b border-gray-200">
+                        <td class="pl-5"><input type="checkbox"></td>
+                        <td class="px-5">PHYS101</td>
+                        <td class="px-5">General Physics</td>
+                        <td class="px-5">
+                            <button class="px-3 py-1 bg-blue-500 text-white rounded-lg">Edit</button>
+                            <button class="px-3 py-1 bg-red-500 text-white rounded-lg">Delete</button>
+                        </td>
+                    </tr>
+
+                    <tr class="h-[50px] border-b border-gray-200">
+                        <td class="pl-5"><input type="checkbox"></td>
+                        <td class="px-5">PHYS101</td>
+                        <td class="px-5">General Physics</td>
+                        <td class="px-5">
+                            <button class="px-3 py-1 bg-blue-500 text-white rounded-lg">Edit</button>
+                            <button class="px-3 py-1 bg-red-500 text-white rounded-lg">Delete</button>
+                        </td>
+                    </tr>
+
+                    
+                    <tr class="h-[50px] border-b border-gray-200">
+                        <td class="pl-5"><input type="checkbox"></td>
+                        <td class="px-5">PHYS101</td>
+                        <td class="px-5">General Physics</td>
+                        <td class="px-5">
+                            <button class="px-3 py-1 bg-blue-500 text-white rounded-lg">Edit</button>
+                            <button class="px-3 py-1 bg-red-500 text-white rounded-lg">Delete</button>
+                        </td>
+                    </tr>
+
+                    
+                    <tr class="h-[50px] border-b border-gray-200">
+                        <td class="pl-5"><input type="checkbox"></td>
+                        <td class="px-5">PHYS101</td>
+                        <td class="px-5">General Physics</td>
+                        <td class="px-5">
+                            <button class="px-3 py-1 bg-blue-500 text-white rounded-lg">Edit</button>
+                            <button class="px-3 py-1 bg-red-500 text-white rounded-lg">Delete</button>
+                        </td>
+                    </tr>
+
+                    
+                    <tr class="h-[50px] border-b border-gray-200">
+                        <td class="pl-5"><input type="checkbox"></td>
+                        <td class="px-5">PHYS101</td>
+                        <td class="px-5">General Physics</td>
+                        <td class="px-5">
+                            <button class="px-3 py-1 bg-blue-500 text-white rounded-lg">Edit</button>
+                            <button class="px-3 py-1 bg-red-500 text-white rounded-lg">Delete</button>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
