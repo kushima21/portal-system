@@ -11,3 +11,8 @@ Route::get('/default', function () {
 });
 
 
+
+Route::get('/subject', function () {
+    return view('admin.subject');
+});
+
