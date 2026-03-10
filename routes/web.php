@@ -22,6 +22,11 @@ Route::get('/subject', [SubjectController::class,'index'])->name('subject.index'
 Route::post('/subject', [SubjectController::class,'store'])->name('subject.store');
 Route::put('/subject/{subject}', [SubjectController::class,'update'])->name('subject.update');
 Route::delete('/subject/{subject}', [SubjectController::class,'destroy'])->name('subject.destroy');
+
+
 Route::get('/programs', [ProgramController::class, 'index'])->name('program.index');
+Route::post('/programs', [ProgramController::class, 'store'])->name('program.store');
 Route::get('/programs/{id}/edit', [ProgramController::class, 'edit'])->name('program.edit');
+Route::put('/programs/{id}', [ProgramController::class, 'update'])->name('program.update');
 Route::delete('/programs/{id}', [ProgramController::class, 'destroy'])->name('program.destroy');
+Route::resource('programs', ProgramController::class);

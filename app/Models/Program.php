@@ -11,5 +11,7 @@ class Program extends Model
 
     protected $table = 'programs';
     protected $primaryKey = 'program_id';
-    protected $fillable = ['program_code', 'program_name', 'level'];
+    public $incrementing = true;
+
+    protected $fillable = ['year_level', 'year_category'];
 }
