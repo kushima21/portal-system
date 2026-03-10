@@ -16,3 +16,11 @@ Route::get('/subject', function () {
     return view('admin.subject');
 });
 
+
+Route::get('/register', function () {
+    return view('auth.register');
+});
+
+Route::get('/personal-details', function () {
+    return view('user.personal-details');
+});

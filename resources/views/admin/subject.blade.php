@@ -80,7 +80,7 @@
                         </td>
                     </tr>
 
-                    <tr class="h-[50px] border-b border-gray-200">
+                    <tr class="h-['50px'] border-b border-gray-200">
                         <td class="pl-5"><input type="checkbox"></td>
                         <td class="px-5">PHYS101</td>
                         <td class="px-5">General Physics</td>
@@ -90,7 +90,7 @@
                         </td>
                     </tr>
 
-                    <tr class="h-[50px] border-b border-gray-200">
+                    <tr class="h-['50px'] border-b border-gray-200">
                         <td class="pl-5"><input type="checkbox"></td>
                         <td class="px-5">PHYS101</td>
                         <td class="px-5">General Physics</td>
@@ -101,7 +101,7 @@
                     </tr>
 
                     
-                    <tr class="h-[50px] border-b border-gray-200">
+                    <tr class="h-['50px'] border-b border-gray-200">
                         <td class="pl-5"><input type="checkbox"></td>
                         <td class="px-5">PHYS101</td>
                         <td class="px-5">General Physics</td>
