@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\ClassroomController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -30,3 +31,4 @@ Route::get('/programs/{id}/edit', [ProgramController::class, 'edit'])->name('pro
 Route::put('/programs/{id}', [ProgramController::class, 'update'])->name('program.update');
 Route::delete('/programs/{id}', [ProgramController::class, 'destroy'])->name('program.destroy');
 Route::resource('programs', ProgramController::class);
+Route::resource('classrooms', ClassroomController::class);
