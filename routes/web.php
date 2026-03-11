@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\ClassroomController;
+use App\Http\Controllers\EnrollmentController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -32,3 +34,14 @@ Route::put('/programs/{id}', [ProgramController::class, 'update'])->name('progra
 Route::delete('/programs/{id}', [ProgramController::class, 'destroy'])->name('program.destroy');
 Route::resource('programs', ProgramController::class);
 Route::resource('classrooms', ClassroomController::class);
+
+
+
+
+
+
+
+Route::get('/enrollments', [EnrollmentController::class, 'index'])->name('enrollment.index');
+Route::post('/enrollments', [EnrollmentController::class, 'store'])->name('enrollment.store');
+Route::delete('/enrollments/{id}', [EnrollmentController::class, 'destroy'])->name('enrollment.destroy');
+Route::put('enrollments/{id}', [EnrollmentController::class, 'update'])->name('enrollments.update');
