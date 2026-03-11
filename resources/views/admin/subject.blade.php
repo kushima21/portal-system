@@ -19,10 +19,31 @@
                 type="text"
                 name="search"
                 placeholder="Search..."
-                class="w-[300px] h-[40px] rounded-lg border border-gray-300 px-3">
+                class="w-[300px] h-[40px] rounded-lg border border-gray-300 px-3"
+                onkeyup="searchTable()">
             </form>
             </div>
         </div>
+    </div>
+
+    <!-- Alerts -->
+    <div class="mt-4 px-5">
+        @if ($errors->any())
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+            <strong>Oops!</strong>
+            <ul class="list-disc list-inside mt-2">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
+        @if (session('success'))
+        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+            {{ session('success') }}
+        </div>
+        @endif
     </div>
 
     <!-- TABLE WRAPPER -->
@@ -71,55 +92,28 @@
     </div>
 </div>
 
+<!-- Edit Modal -->
 <div id="editModal" class="fixed inset-0 hidden flex justify-center items-center z-50">
-
-    <!-- Modal Card -->
     <div class="bg-white w-[420px] p-8 rounded-2xl shadow-2xl relative">
-
-        <!-- Close Button -->
-        <button onclick="closeEditModal()" 
-        class="absolute top-3 right-4 text-gray-400 hover:text-red-500 text-2xl font-bold">
-            &times;
-        </button>
-
-        <!-- Title -->
-        <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">
-            Edit Subject
-        </h2>
-
+        <button onclick="closeEditModal()" class="absolute top-3 right-4 text-gray-400 hover:text-red-500 text-2xl font-bold">&times;</button>
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Edit Subject</h2>
         <form id="editForm" method="POST" class="space-y-4">
             @csrf
             @method('PUT')
-
-            <!-- Subject Code -->
             <div>
                 <label class="text-sm text-gray-600">Subject Code</label>
-                <input 
-                type="text" 
-                name="subject_code" 
-                id="edit_code"
-                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none"
-                required>
+                <input type="text" name="subject_code" id="edit_code"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none" required>
             </div>
-
-            <!-- Subject Title -->
             <div>
                 <label class="text-sm text-gray-600">Descriptive Title</label>
-                <input 
-                type="text" 
-                name="descriptive_title" 
-                id="edit_title"
-                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none"
-                required>
+                <input type="text" name="descriptive_title" id="edit_title"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none" required>
             </div>
-
-            <!-- Update Button -->
-            <button 
-            class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition">
+            <button class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition">
                 Update Subject
             </button>
         </form>
-
     </div>
 </div>
 
@@ -136,11 +130,10 @@
          class="fixed inset-0 flex justify-center items-center z-50 pointer-events-none">
         <div @click.away="open = false" 
              class="bg-white rounded-2xl shadow-2xl w-96 p-8 transform transition-all duration-300 scale-95 pointer-events-auto">
-            
             <button @click="open = false" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 text-2xl font-bold">&times;</button>
             
             <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Add Subject</h3>
-            
+
             <form action="{{ route('subject.store') }}" method="POST" class="space-y-5">
                 @csrf
                 <div>
@@ -176,7 +169,6 @@ document.getElementById('prevBtn').addEventListener('click', () => {
     if (currentPage > 1) currentPage--;
     displayTable(currentPage);
 });
-
 document.getElementById('nextBtn').addEventListener('click', () => {
     if (currentPage < totalPages) currentPage++;
     displayTable(currentPage);
@@ -198,35 +190,24 @@ function openEditModal(id, code, title) {
     document.getElementById("edit_title").value = title;
     document.getElementById("editForm").action = "/subject/" + id;
 }
+function closeEditModal() {
+    document.getElementById("editModal").classList.add("hidden");
+}
 function searchTable() {
-
-    let input = document.getElementById("searchInput");
+    let input = document.querySelector('input[name="search"]');
     let filter = input.value.toLowerCase();
-
     let table = document.getElementById("subjectTable");
     let rows = table.getElementsByTagName("tr");
-
     for (let i = 1; i < rows.length; i++) {
-
         let code = rows[i].getElementsByTagName("td")[1];
         let title = rows[i].getElementsByTagName("td")[2];
-
-        if (code || title) {
-
+        if (code && title) {
             let codeText = code.textContent || code.innerText;
             let titleText = title.textContent || title.innerText;
-
-            if (
-                codeText.toLowerCase().includes(filter) ||
-                titleText.toLowerCase().includes(filter)
-            ) {
-                rows[i].style.display = "";
-            } else {
-                rows[i].style.display = "none";
-            }
-
+            rows[i].style.display = (codeText.toLowerCase().includes(filter) || titleText.toLowerCase().includes(filter)) ? '' : 'none';
         }
     }
 }
+displayTable(currentPage);
 </script>
 @endsection

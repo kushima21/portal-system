@@ -24,9 +24,19 @@ class ClassroomController extends Controller
             'adviser' => 'required|string',
         ]);
 
+        // Check if classroom already exists
+        $exists = Classroom::where('year_level', $request->year_level)
+            ->where('section', $request->section)
+            ->where('year_level_category', $request->year_level_category)
+            ->exists();
+
+        if ($exists) {
+            return redirect()->route('classrooms.index')
+                ->with('error', 'Classroom already exists.');
+        }
+
         Classroom::create($request->only('year_level','section','year_level_category','adviser'));
 
-        // Redirect to index using resource route naming
         return redirect()->route('classrooms.index')->with('success', 'Classroom added successfully.');
     }
 
@@ -39,6 +49,18 @@ class ClassroomController extends Controller
             'year_level_category' => 'required|string',
             'adviser' => 'required|string',
         ]);
+
+        // Check for duplicate when updating (exclude current record)
+        $exists = Classroom::where('year_level', $request->year_level)
+            ->where('section', $request->section)
+            ->where('year_level_category', $request->year_level_category)
+            ->where('id', '!=', $id)
+            ->exists();
+
+        if ($exists) {
+            return redirect()->route('classrooms.index')
+                ->with('error', 'Another classroom with the same details already exists.');
+        }
 
         $classroom = Classroom::findOrFail($id);
         $classroom->update($request->only('year_level','section','year_level_category','adviser'));

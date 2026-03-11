@@ -17,6 +17,16 @@ class ProgramController extends Controller
             'year_level' => 'required|string|max:255',
             'year_category' => 'required|string|max:255',
         ]);
+
+        // Check for duplicate program
+        if (Program::where([
+            ['year_level', $request->year_level],
+            ['year_category', $request->year_category]
+        ])->exists()) {
+            return redirect()->route('programs.index')
+                             ->with('error', 'Program already exists.');
+        }
+
         Program::create($request->only(['year_level', 'year_category']));
         return redirect()->route('programs.index')->with('success', 'Program added successfully.');
     }
@@ -26,7 +36,18 @@ class ProgramController extends Controller
             'year_level' => 'required|string|max:255',
             'year_category' => 'required|string|max:255',
         ]);
+
         $program = Program::findOrFail($id);
+
+        // Optional: prevent duplicate on update
+        if (Program::where([
+            ['year_level', $request->year_level],
+            ['year_category', $request->year_category]
+        ])->where('id', '!=', $id)->exists()) {
+            return redirect()->route('programs.index')
+                             ->with('error', 'Program with the same data already exists.');
+        }
+
         $program->update($request->only(['year_level', 'year_category']));
         return redirect()->route('programs.index')->with('success', 'Program updated successfully.');
     }
