@@ -9,7 +9,14 @@ class Classroom extends Model
 {
     use HasFactory;
 
-    protected $table = 'classrooms';
     protected $primaryKey = 'classroom_id';
-    protected $fillable = ['year_level','section','year_level_category','adviser'];
+
+    protected $fillable = [
+        'year_level',
+        'section',
+        'year_level_category',
+        'adviser',
+    ];
+
+    public $timestamps = true;
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\PersonnelController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ClassesController;
 
 // Home / Default
 Route::get('/', function () {
@@ -40,7 +41,11 @@ Route::resource('programs', ProgramController::class);
 // =========================
 // CLASSROOMS
 // =========================
-Route::resource('classrooms', ClassroomController::class);
+
+Route::get('/classrooms', [ClassroomController::class, 'index'])->name('classrooms.index');
+Route::post('/classrooms', [ClassroomController::class, 'store'])->name('classrooms.store');
+Route::put('/classrooms/{id}', [ClassroomController::class, 'update'])->name('classrooms.update');
+Route::delete('/classrooms/{id}', [ClassroomController::class, 'destroy'])->name('classrooms.destroy');
 
 
 // =========================
@@ -68,3 +73,11 @@ Route::get('/user', [UserController::class, 'index'])->name('user.index');
 Route::post('/user', [UserController::class, 'store'])->name('user.store');
 Route::put('/user/{user}', [UserController::class, 'update'])->name('user.update');
 Route::delete('/user/{user}', [UserController::class, 'destroy'])->name('user.destroy');
+
+
+
+// CLASSES
+Route::get('/classes', [ClassesController::class, 'index'])->name('classes.index');
+Route::post('/classes', [ClassesController::class, 'store'])->name('classes.store');
+Route::put('/classes/{class}', [ClassesController::class, 'update'])->name('classes.update');
+Route::delete('/classes/{class}', [ClassesController::class, 'destroy'])->name('classes.destroy');
